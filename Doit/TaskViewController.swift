@@ -13,6 +13,7 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     var tasks: [Task] = []
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedIndex = indexPath.row
         let task = tasks[indexPath.row]
        performSegue(withIdentifier: "trailToSelected", sender: task)
         
@@ -67,14 +69,15 @@ class TaskViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "trilToAdd" {
+        if segue.identifier == "trailToAdd" {
             let nextVC = segue.destination as! CreateTaskViewController
             nextVC.previousVC = self
         }
         
         if segue.identifier == "TrailToSelected" {
-            let othervc = segue.destination as! CompleteTaskViewController
-            othervc.task = sender as! Task
+            let nextVC = segue.destination as! CompleteTaskViewController
+            nextVC.task = sender as! Task
+            nextVC.previousVC = self
         }
     }
     

@@ -22,7 +22,7 @@ class CreateTaskViewController: UIViewController {
     }
 
     @IBAction func addTapped(_ sender: AnyObject) {
-    //Create tast to add to Array
+    //Create task to add to Array
     
     
     let task = Task()
@@ -30,8 +30,9 @@ class CreateTaskViewController: UIViewController {
         task.important = importantSwitch.isOn
     
         previousVC.tasks.append(task)
+        print(task)
         previousVC.tableView.reloadData()
-        //navigationController!.popViewController(animated: true)
+        navigationController!.popViewController(animated: true)
             }
 
 

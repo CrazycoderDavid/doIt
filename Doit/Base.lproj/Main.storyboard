@@ -61,27 +61,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j54-zZ-UcY">
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jba-aU-4kE">
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="completed:" destination="FLW-12-M4S" eventType="touchUpInside" id="tlc-cb-HcJ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4w-wT-Izu">
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jba-aU-4kE">
-                                <state key="normal" title="Complete"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="jba-aU-4kE" firstAttribute="top" secondItem="j54-zZ-UcY" secondAttribute="bottom" constant="25.5" id="B4g-WX-mcV"/>
-                            <constraint firstItem="j54-zZ-UcY" firstAttribute="top" secondItem="KQq-OK-IxZ" secondAttribute="bottom" constant="25" id="HMb-Ph-CiK"/>
-                            <constraint firstItem="j54-zZ-UcY" firstAttribute="centerX" secondItem="nPL-FA-js0" secondAttribute="centerX" id="m0H-uu-dwY"/>
+                            <constraint firstItem="X4w-wT-Izu" firstAttribute="centerX" secondItem="nPL-FA-js0" secondAttribute="centerX" id="NLh-fv-mqi"/>
+                            <constraint firstItem="X4w-wT-Izu" firstAttribute="top" secondItem="KQq-OK-IxZ" secondAttribute="bottom" constant="17" id="dJn-6M-b0F"/>
+                            <constraint firstItem="jba-aU-4kE" firstAttribute="top" secondItem="X4w-wT-Izu" secondAttribute="bottom" constant="39" id="ibo-cf-awy"/>
                             <constraint firstItem="jba-aU-4kE" firstAttribute="centerX" secondItem="nPL-FA-js0" secondAttribute="centerX" id="xOQ-fP-Syz"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="taskLbl" destination="X4w-wT-Izu" id="Hdt-lD-5uX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJZ-do-ENL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1057" y="909"/>
+            <point key="canvasLocation" x="1056.8" y="908.9955022488756"/>
         </scene>
         <!--Create Task View Controller-->
         <scene sceneID="ZtL-Ex-FOn">
